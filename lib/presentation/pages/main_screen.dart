@@ -148,7 +148,11 @@ class _MainScreenState extends State<MainScreen> {
                     width: screenWidth,
                   );
                 } else if (state is TripsLoadingState) {
-                  return const CircularProgressIndicator();
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      color: brandColor,
+                    ),
+                  );
                 } else if (state is TripsSuccessState) {
                   return RefreshIndicator(
                     onRefresh: () async {

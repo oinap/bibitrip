@@ -9,6 +9,7 @@ class TripsBloc extends Bloc<TripsEvent, TripsState> {
   }
   Future<void> _onFindTrips(
       FindTripsEvent event, Emitter<TripsState> emit) async {
+    emit(TripsLoadingState());
     final dio = Dio();
     List<Map<String, dynamic>> tripsDetails = [];
     Response response;
